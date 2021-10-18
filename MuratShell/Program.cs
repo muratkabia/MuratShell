@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Security;
 using MuratShell.Utils;
@@ -23,12 +23,6 @@ namespace MuratShell
         {
             Console.WriteLine("MuratShell [Version 1.0]");
             Console.WriteLine("(c) 2021 MuratDeveloper. Tüm haklar saklıdır");
-            helplist = [new Help("rect", "Calculate the area of a rectangle"),
-                new Help("clear", "Clear the console"),
-                new Help("helloworld", "Hello, World!"),
-                new Help("neofetch", "Get information about computer"),
-                new Help("help","Displays this message"),
-                new Help("exit","Exit MuratShell")];
         }
         
         static void init()
@@ -37,7 +31,9 @@ namespace MuratShell
             {
                 Console.WriteLine(" ");
                 Console.Write(Directory.GetCurrentDirectory()+">");
+                Console.ForegroundColor = ConsoleColor.;
                 String input = Console.ReadLine();
+                Console.ResetColor();
                 String[] args = input.Split(" ");
 
                 switch (args[0])
@@ -68,9 +64,12 @@ namespace MuratShell
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Commands");
                         Console.WriteLine("====================");
-                        foreach (Help helper in helplist) {
-                            Console.WriteLine(Help.getCommandName()+","+Help.getHelpString());
-                        }
+                        //foreach (Help helper in helplist) {
+                        //    Console.WriteLine(Help.getCommandName()+","+Help.getHelpString());
+                        //}
+                        new Komutlar.Help();
+                        Console.ResetColor();
+                        break;
 
                     case "neofetch":
                         //Console.BackgroundColor = ConsoleColor.Blue;
