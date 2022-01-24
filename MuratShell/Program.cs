@@ -31,7 +31,7 @@ namespace MuratShell
             {
                 Console.WriteLine(" ");
                 Console.Write(Directory.GetCurrentDirectory()+">");
-                Console.ForegroundColor = ConsoleColor.;
+                Console.ForegroundColor = ConsoleColor.Green;
                 String input = Console.ReadLine();
                 Console.ResetColor();
                 String[] args = input.Split(" ");
